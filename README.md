@@ -8,7 +8,7 @@ Date: September 8, 2017
 
 Modified by Jianqing Feng on December 12, 2019
 
-This repository contains source code and examples for the 1-D thermal model of lunar surface. In its present form, heat1d uses a finite difference approach to solve the one-dimensional heat equation. The Original version of this code comes from Paul O. Hayne, which can be downloaded from https://github.com/phayne/heat1d. In this version we change the solar incidence angle dependent albedo function and the thermal conductivities of the lunar regolith.
+This repository contains source code and examples for the 1-D thermal model of lunar surface. In its present form, heat1d uses a finite difference approach to solve the one-dimensional heat equation. The Original version of this code comes from Paul O. Hayne, which can be downloaded from https://github.com/phayne/heat1d. In this version we change the solar incidence angle dependent albedo function, the thermal conductivities of the lunar regolith and the number of orbital cycles.
 
 This is the MATLAB "MEX"-file implementation of the thermal code. It is based on the original C-code, adapted to be compiled and executed from within the MATLAB environment.
 
