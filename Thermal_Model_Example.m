@@ -5,19 +5,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% 
-H=0.07;                            %h-parameter [m]
-rhos=1100;                         %Surface density  [kg.m-3]
-rhod=1800;                         %Density at depth [kg.m-3]
-ks=8.0e-4;                         %ks is surface conductivity [W.m-1.K-1]
-kd=3.8e-3;                         %Thermal conductivity at depth  [W.m-1.K-1]
-latitude=0;                        %Latitude [deg]
-CHI=2.7;                           %Regolith radiative conductivity parameter [unitless]
-Malbedo=0.07;                      %Typical mare albedo 
-Halbedo=0.12;                      %Typical highland albedo
-outtime=0:0.02:24;                 %Times to output [hr]
+H = 0.07;                            %h-parameter [m]
+rhos = 1100;                         %Surface density  [kg.m-3]
+rhod = 1800;                         %Density at depth [kg.m-3]
+ks = 8.0e-4;                         %ks is surface conductivity [W.m-1.K-1]
+kd = 3.8e-3;                         %Thermal conductivity at depth  [W.m-1.K-1]
+latitude = 0;                        %Latitude [deg]
+CHI = 2.7;                           %Regolith radiative conductivity parameter [unitless]
+Malbedo = 0.07;                      %Typical mare albedo 
+Halbedo = 0.12;                      %Typical highland albedo
+outtime = 0:0.02:24;                 %Times to output [hr]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-[T,p]=heat1d_mex(H, rhos, rhod, ks, kd, CHI, latitude, Halbedo, outtime); 
+[T,p] = heat1d_mex(H, rhos, rhod, ks, kd, CHI, latitude, Halbedo, outtime); 
 
 figure;
 plot(max(T'),p(:,1),'r',min(T'),p(:,1),'r',mean(T'),p(:,1),'r');
