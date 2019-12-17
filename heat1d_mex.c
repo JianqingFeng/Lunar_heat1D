@@ -577,7 +577,8 @@ void radFlux( double time, double dec, double r, profileT *p ) {
   cosz = 0.5 * ( cosz + fabs(cosz) );
 
   // Incidence angle-dependent albedo (Vasavada et al., JGR, 2012)
-  A = albedoModel(p->albedo, acos(inccos));
+ // A = albedoModel(p->albedo, acos(inccos));
+    A = albedoModel(p->albedo, inccos);
 
   // Total flux accounts for insolation and infrared from ground
   hss = sin(0.5*acos(p->slopecos));
@@ -606,8 +607,7 @@ double albedoModel( double a, double theta ) {
   //x1 = ALBCONST1*( pow(theta/PIOVERFOUR,3) );
   //x2 = ALBCONST2*( pow(theta/PIOVERTWO,8) );
 
-  theta = theta * 180 / PI;
-  x1 = (1.351e-3)*theta - (3.387e-5)*theta*theta + (2.567e-6)*(theta*theta*theta) - (4.481e-8)*(theta*theta*theta*theta) + (3.148e-10)*(theta*theta*theta*theta*theta);
+   x1= -1.597*theta + 2.15*theta*theta - 1.636*(theta*theta*theta) + 0.4704*(theta*theta*theta*theta) + 0.6126;
   
   // DEBUG
   //fprintf(stderr, "x1 = %.4f, x2 = %.4f\n", x1, x2);
